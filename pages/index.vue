@@ -80,7 +80,7 @@ const columns = [
       text: info.getValue(),
     }),
     meta: {
-      width: 'minmax(220px, 1fr)',
+      width: 'minmax(215px, 1fr)',
     },
   }),
 ] as ColumnDef<TablePost>[]
