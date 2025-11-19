@@ -1,0 +1,8 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.5) transparent;
+}
+
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
