@@ -8,7 +8,7 @@
       :disabled="!tooltipEnabled"
       :ui="{ text: 'whitespace-normal break-words', content: 'max-w-50 h-auto' }"
     >
-      <span :ref="checkSize" :class="textPrimary ? 'short-text--primary' : ''">{{ text }}</span>
+      <span :class="textPrimary ? 'short-text--primary' : ''">{{ text }}</span>
       <Icon
         v-if="tooltipEnabled"
         name="heroicons:information-circle"
@@ -24,13 +24,13 @@
       :disabled="!tooltipEnabled"
       :ui="{ text: 'whitespace-normal break-words', content: 'max-w-80 h-auto' }"
     >
-      <span :ref="checkSize" :class="textPrimary ? 'short-text--primary' : ''">{{ text }}</span>
+      <span :class="textPrimary ? 'short-text--primary' : ''">{{ text }}</span>
     </UTooltip>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onClickOutside, unrefElement } from '@vueuse/core'
+import { onClickOutside } from '@vueuse/core'
 
 defineProps<{ text: string, textPrimary?: boolean }>()
 
@@ -43,12 +43,6 @@ const { isMobile } = useScreen()
 onClickOutside(wrapper, () => {
   open.value = false
 })
-
-function checkSize(_el: HTMLElement) {
-  const el = unrefElement(_el)
-
-  tooltipEnabled.value = el ? el.scrollWidth > el.clientWidth : false
-}
 </script>
 
 <style lang="scss">

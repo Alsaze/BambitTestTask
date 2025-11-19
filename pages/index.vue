@@ -50,7 +50,7 @@ const columns = [
   columnHelper.accessor('id', {
     header: 'ID',
     meta: {
-      width: '50px',
+      width: '55px',
     },
   }),
   columnHelper.accessor('title', {
